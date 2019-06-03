@@ -14,8 +14,6 @@ export default function(state = INITIAL_STATE, action) {
       }
     }
     case Types.USER_ERROR: {
-      console.log(action.payload.error);
-      
       return {
         ...state,
         error: action.payload.error

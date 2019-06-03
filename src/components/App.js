@@ -4,6 +4,7 @@ import {Alert} from 'reactstrap'
 import {getUserRequests, createUserRequest, deleteUserRequest, userError} from '../actions/users';
 import UsersList from './usersList';
 import NewUserForm from './NewUserForm';
+import selectedPosts from './selected_posts';
 
 class App extends Component {
   constructor(props) {
@@ -39,6 +40,7 @@ class App extends Component {
         <Alert color='danger' isOpen={!!this.props.users.error} toggle={this.onDismiss}>
           {this.props.users.error}
         </Alert>
+        <selectedPosts />
         <NewUserForm onSubmit={this.handleSubmit} />
         <UsersList onDeleteUser={this.handleDelete} users={users.items}/> 
       </div>
